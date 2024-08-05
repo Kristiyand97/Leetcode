@@ -1,16 +1,13 @@
-class Solution(object):
-    def numJewelsInStones(self, jewels, stones):
-        unique_stones = {}
-        total = 0
-        
-        for s in stones:
-            if s in jewels:
-                if s not in unique_stones:
-                    unique_stones[s] = 1
-                else:
-                    unique_stones[s] += 1
-                    
-        for stone in unique_stones:
-            total += unique_stones[stone]
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        unique_jewels = {}
+        counter = 0
 
-        return total
+        for j in jewels:
+            unique_jewels[j] = 0
+
+        for s in stones:
+            if s in unique_jewels:
+                counter += 1
+        return counter
+            
