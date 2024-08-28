@@ -5,7 +5,7 @@ class Solution(object):
 
         for word in words:
             checker = True
-            for w in brokenLetters:
+            for w in set(brokenLetters):
                 if w in word:
                     checker = False
                     break
