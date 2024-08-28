@@ -3,9 +3,11 @@ class Solution(object):
         words = text.split(" ")
         counter = 0
 
+        broken_set = set(brokenLetters)
+
         for word in words:
             checker = True
-            for w in set(brokenLetters):
+            for w in broken_set:
                 if w in word:
                     checker = False
                     break
@@ -13,4 +15,5 @@ class Solution(object):
                 counter += 1
 
         return counter
+
 
